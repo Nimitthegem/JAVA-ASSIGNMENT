@@ -1,2 +1,2 @@
-# JAVA-ASSIGNMENT
-Contains java assignment
+# JAVASCRIPT-ASSIGNMENT
+Contains javascript assignment
