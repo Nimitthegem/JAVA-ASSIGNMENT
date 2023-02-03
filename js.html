@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    
+    <title>Table</title>
+</head>
+<body>
+    <script>
+
+        //table heading 
+
+        arr=["Name","Age","DOB","Email","Company"];
+
+        //table information
+
+        data=[['Nimit Mahna','22','19-01-2001','Nimitmahna1@gmail.com','Gemini Solutions'],
+              ['Nimit Mahna','22','19-01-2001','Nimitmahna1@gmail.com','Gemini Solutions'],
+              ['Nimit Mahna','22','19-01-2001','Nimitmahna1@gmail.com','Gemini Solutions'],
+              ['Nimit Mahna','22','19-01-2001','Nimitmahna1@gmail.com','Gemini Solutions'],
+              ['Nimit Mahna','22','19-01-2001','Nimitmahna1@gmail.com','Gemini Solutions']];
+
+          
+
+         //self invoke function
+
+          ( function dyanamictable (){
+         const head=document.createElement("h1");
+         const head_text=document.createTextNode('Employee Information Table');
+         head.appendChild(head_text);
+
+         //appending heading  on body
+         document.body.appendChild(head);
+
+        //creating table and tbody
+        const tb=document.createElement("table");
+        const tbdy=document.createElement("tbody");
+
+        //creating table heading and table row
+        const th=document.createElement("thead");
+        var thr=document.createElement("tr");
+
+
+        // for loop for filling all info of table heading
+        for(let i=0;i<arr.length;i++){
+       
+        const cell=document.createElement("th");
+        const Text=document.createTextNode(`${arr[i]}`)
+        cell.appendChild(Text);
+        thr.appendChild(cell);
+        }
+        th.appendChild(thr);
+        
+        
+        var tbr=document.createElement("tr");
+         for( let i=0;i<data.length;i++)
+        {
+          const row = document.createElement("tr");
+           row.setAttribute("padding","5");
+        for(let j=0;j<data[i].length;j++)
+        {
+            const cell = document.createElement("td");
+            const Text = document.createTextNode(`${data[i][j]}`);
+            cell.appendChild(Text);
+             row.appendChild(cell);
+        }
+        tbdy.appendChild(row);
+        }
+         tbdy.setAttribute("padding", "5px");
+
+         //appending table heading and tbody part inside table
+         tb.appendChild(th);
+         tb.appendChild(tbdy);
+
+          //setting bording for table 
+         tb.setAttribute("border", "2");
+         
+        //appending table to body
+        document.body.appendChild(tb);
+       
+        })();
+       
+       
+        </script>
+
+   
+</body>
+</html>
